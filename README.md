@@ -1,6 +1,6 @@
 # FlowApp
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
+This app is following the style guide described in here `https://angular.io/docs/ts/latest/guide/style-guide.html`.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
