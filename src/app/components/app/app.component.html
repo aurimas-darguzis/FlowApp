@@ -2,4 +2,10 @@
   {{title}}
 </h1>
 
-<app-items></app-items>
+<div>
+  <ul>
+    <li><a [routerLink]="['/items']">Items</a></li>
+  </ul>
+</div>
+<router-outlet></router-outlet>
+<!--<app-items></app-items>-->

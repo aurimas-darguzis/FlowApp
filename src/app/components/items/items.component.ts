@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-items',
   template: `
-    <div class="row">
+    <h3>Items Component</h3>
+    <div>
       <app-item-list></app-item-list>
     </div>
   `

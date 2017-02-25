@@ -1,5 +1,4 @@
-<!--<app-item *ngFor="let item of items; let i = index" [item]="item"></app-item>-->
-<h1>Labas</h1>
+<h3>Item List Component</h3>
 <div *ngFor="let item of items; let i = index">
   {{ item.name }} || <span *ngIf="item.tags">{{ item?.tags[0].value }}</span> 
   <br>
