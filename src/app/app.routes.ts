@@ -1,7 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent,
-         ItemsComponent,
-         ItemListComponent } from './components/index';
+         ItemsComponent       } from './components/index';
 
 export const routes: Routes = [
     {

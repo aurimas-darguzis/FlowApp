@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent, ItemsComponent, ItemListComponent } from './components';
+import { AppComponent, ItemsComponent } from './components';
 
 import { ItemsService } from './services';
 
@@ -12,7 +12,7 @@ import { routes } from './app.routes';
 
 @NgModule({
   declarations: [
-    AppComponent, ItemsComponent, ItemListComponent, ItemsComponent
+    AppComponent, ItemsComponent
   ],
   imports: [
     BrowserModule,
