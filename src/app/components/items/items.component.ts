@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ItemsService } from '../../services';
 import { Item } from '../../model';
 
@@ -6,13 +6,16 @@ import { Item } from '../../model';
   selector: 'app-items',
   templateUrl: './items.component.html'
 })
-export class ItemsComponent implements OnInit {
+export class ItemsComponent implements OnInit, OnDestroy {
   items: Item[] = [];
+  sub: any;
 
   constructor(private itemsService: ItemsService) { }
 
   ngOnInit() {
-    this.getItemsFromApi();
+    // this.sub = this.itemsService.getItem()
+    //                .subscribe(items => this.items = items);
+    this.sub = this.getItemsFromApi();
   }
 
   getItemsFromApi() {
@@ -26,10 +29,15 @@ export class ItemsComponent implements OnInit {
             }
           }
           this.items = internalArray;
-          console.log(this.items)
         },
         error => console.error(error)
       );
+  }
+
+  ngOnDestroy() {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
   }
 
 }
