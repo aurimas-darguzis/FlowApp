@@ -3,10 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { ItemsComponent } from './items/items.component';
-import { ItemsService } from './items-service.service';
-import { ItemListComponent } from './items/item-list.component';
+import { AppComponent, ItemsComponent, ItemListComponent } from './components';
+
+import { ItemsService } from './services';
 
 @NgModule({
   declarations: [
