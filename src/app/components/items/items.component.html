@@ -1,0 +1,11 @@
+<h2><a [routerLink]="['/']">back</a></h2>
+<button [routerLink]="['/items/add']">Add</button> <br />
+<div *ngFor="let item of items; let i = index">
+  Item name: {{ item.name }} || <span *ngIf="item.tags"> Item tag: {{ item?.tags[0].value }}</span> 
+  <br>
+
+  <p 
+  >{{ tag?.name }} </p>
+
+</div>
+
