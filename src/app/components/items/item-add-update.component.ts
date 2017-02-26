@@ -39,7 +39,11 @@ export class ItemAddUpdateComponent implements OnInit, OnDestroy {
          });
     }
 
-    save() {
+    save(item: Item) {
         console.log(this.itemForm);
+        this.itemsService.saveItem(item)
+                         .subscribe(response => {
+                             this.router.navigate(['/items']);
+                         });
     }
 }
