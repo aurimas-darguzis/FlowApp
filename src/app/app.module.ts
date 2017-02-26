@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent, ItemsComponent, ItemAddUpdateComponent } from './components';
@@ -17,7 +17,7 @@ import { routes } from './app.routes';
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    FormsModule,
+    ReactiveFormsModule,
     HttpModule
   ],
   providers: [ ItemsService ],
