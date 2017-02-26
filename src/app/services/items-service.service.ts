@@ -9,7 +9,7 @@ import { Item } from '../model';
 
 @Injectable()
 export class ItemsService {
-  private _serviceUrl = 'https://localhost:3000/items';
+  private _serviceUrl = 'http://localhost:3000/items';
 
   // items: Item[] = [];
 

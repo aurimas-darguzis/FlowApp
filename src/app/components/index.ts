@@ -12,4 +12,4 @@ export default [
     AppComponent,
     ItemsComponent,
     ItemAddUpdateComponent
-]
+];

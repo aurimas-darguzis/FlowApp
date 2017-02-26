@@ -15,7 +15,6 @@ export class ItemsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sub = this.itemsService.getItems()
                    .subscribe(items => this.items = items);
-    console.log(this.sub);
     // this.sub = this.getItemsFromApi();
   }
 
