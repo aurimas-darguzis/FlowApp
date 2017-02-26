@@ -3,7 +3,8 @@ import { Observable } from 'rxjs/Rx';
 import { Http, Response, Headers } from '@angular/http';
 import { Item } from '../model';
 
-const meTheItems = 'https://openenergi-4b230.firebaseio.com/items.json';
+// const _serviceUrl = 'https://openenergi-4b230.firebaseio.com/items.json';
+const _serviceUrl = 'https://localhost:3000/items';
 
 
 @Injectable()
@@ -14,7 +15,7 @@ export class ItemsService {
 
   getItem(): Observable<Item[]> {
 
-    return this.http.get(meTheItems)
+    return this.http.get(_serviceUrl)
       .map((response: Response) => <Item[]>response.json())
       .catch(this.handleError);
   }
