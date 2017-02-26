@@ -13,26 +13,27 @@ export class ItemsComponent implements OnInit, OnDestroy {
   constructor(private itemsService: ItemsService) { }
 
   ngOnInit() {
-    // this.sub = this.itemsService.getItem()
-    //                .subscribe(items => this.items = items);
-    this.sub = this.getItemsFromApi();
+    this.sub = this.itemsService.getItems()
+                   .subscribe(items => this.items = items);
+    console.log(this.sub);
+    // this.sub = this.getItemsFromApi();
   }
 
-  getItemsFromApi() {
-    this.itemsService.getItem()
-      .subscribe(
-        (items: Item[]) => {
-          const internalArray = [];
-          for (const item in items) {
-            if (item) {
-              internalArray.push(items[item]);
-            }
-          }
-          this.items = internalArray;
-        },
-        error => console.error(error)
-      );
-  }
+  // getItemsFromApi() {
+  //   this.itemsService.getItems()
+  //     .subscribe(
+  //       (items: Item[]) => {
+  //         const internalArray = [];
+  //         for (const item in items) {
+  //           if (item) {
+  //             internalArray.push(items[item]);
+  //           }
+  //         }
+  //         this.items = internalArray;
+  //       },
+  //       error => console.error(error)
+  //     );
+  // }
 
   ngOnDestroy() {
     if (this.sub) {
