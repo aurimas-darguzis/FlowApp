@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { Item } from '../../model';
 import { ItemsService } from '../../services';
 
+@Component({
+    templateUrl: './item-add-update.component.html'
+})
 
 export class ItemAddUpdateComponent implements OnInit, OnDestroy {
 
@@ -34,5 +37,9 @@ export class ItemAddUpdateComponent implements OnInit, OnDestroy {
             name: new FormControl(),
             email: new FormControl()
          });
+    }
+
+    save() {
+        console.log(this.itemForm);
     }
 }

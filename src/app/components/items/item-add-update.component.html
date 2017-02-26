@@ -1,1 +1,18 @@
 <h3>Adding items here</h3>
+
+<form (ngSubmit)="save()" [formGroup]="itemForm">
+    <div>
+        <label for="name">Name</label>
+        <input id="name" type="text"
+               placeholder="Name"
+               formControlName="name">
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input id="email" type="email"
+               placeholder="Email"
+               formControlName="email">
+    </div>
+
+    <button type="submit">Save</button>
+</form>
