@@ -12,16 +12,27 @@ export class ItemAddUpdateComponent implements OnInit, OnDestroy {
     sub: any;
 
     itemForm: FormGroup;
+    item: Item;
 
-    constructor() {}
+    constructor(private fb: FormBuilder,
+                private router: Router,
+                private itemsService: ItemsService) {}
 
     ngOnInit() {
-
+        this.item = new Item();
+        this.createForm(this.item);
     }
 
     ngOnDestroy() {
         if (this.sub) {
             this.sub.unsubrscribe();
         }
+    }
+
+    createForm(item: Item) {
+        this.itemForm = new FormGroup({
+            name: new FormControl(),
+            email: new FormControl()
+         });
     }
 }
