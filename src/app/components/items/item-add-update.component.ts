@@ -17,6 +17,10 @@ export class ItemAddUpdateComponent implements OnInit, OnDestroy {
     itemForm: FormGroup;
     item: Item;
 
+    get addresses(): FormArray{
+        return <FormArray>this.itemForm.get('addresses');
+    }
+
     constructor(private fb: FormBuilder,
                 private router: Router,
                 private itemsService: ItemsService) {}
@@ -35,8 +39,19 @@ export class ItemAddUpdateComponent implements OnInit, OnDestroy {
     createForm(item: Item) {
         this.itemForm = new FormGroup({
             name: new FormControl(),
-            email: new FormControl()
+            email: new FormControl(),
+            address: this.fb.array( [this.buildAddress()] )
          });
+    }
+
+    buildAddress(): FormGroup {
+        return this.fb.group({
+            addressType: '',
+            street1: '',
+            street2: '',
+            city: '',
+            postCode: ''
+        });
     }
 
     save(item: Item) {
