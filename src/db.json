@@ -21,7 +21,8 @@
       "name": "item 5"
     },
     {
-      "id": 6
+      "id": 6,
+      "name": "new item"
     }
   ]
 }
